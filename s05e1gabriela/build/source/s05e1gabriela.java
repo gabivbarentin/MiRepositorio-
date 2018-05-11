@@ -14,30 +14,18 @@ import java.io.IOException;
 
 public class s05e1gabriela extends PApplet {
 
-//se ver\u00e1 una grilla muy mal medida de circulos
 public void setup(){
   
-  ellipse(250,250,5,5);
-  ellipse(250,450,5,5);
-  ellipse(250,600,5,5);
-  ellipse(250,750,5,5);
-
-  ellipse(340,250,5,5);
-  ellipse(340,450,5,5);
-  ellipse(340,600,5,5);
-  ellipse(340,750,5,5);
-
-  ellipse(410,250,5,5);
-  ellipse(410,450,5,5);
-  ellipse(410,600,5,5);
-  ellipse(410,750,5,5);
-
-  ellipse(500,250,5,5);
-  ellipse(500,450,5,5);
-  ellipse(500,600,5,5);
-  ellipse(500,750,5,5);
-
+  for(int i= 0;i <4;i ++){
+    for (int j = 0; j <5; j++) {
+    float x = map(i, 0, 3, width * .25f, width * .5f); //map solo entrega float.
+    // de 0 a 3 pq es < 4. .25 es el punto 25. es lo mismo que width/4
+    //.5 es 1000 divivido en 2 es 500.
+    float y = map(j, 0, 4, height * .25f, height * .75f);
+    ellipse (x, y, 10, 10);
   }
+}
+}
   public void settings() {  size(1000,1000); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "s05e1gabriela" };
